@@ -15,21 +15,19 @@
     </head>
     <body>
         <span >
-            <span class="hp-spacing">HP: </span>
-            <span class="hp-spacing">HP: </span>
+            <span id="player-hp" class="hp-spacing"></span>
+            <span id="enemy-hp" class="hp-spacing"></span>
         </span>
         <div>
             <span class="p-e-spacing">Player</span>
             <span>Enemy</span>
         </div>
         <div>
-            <button id="atkBtn" onclick="attack()">attack</button>
+            <button id="atkBtn" onclick="attack(); test();">attack</button>                                              
             <button id = "defBtn">defend</button>
             <button id = "healBtn">heal</button>
         </div>
-        <div>
-
-        </div>
+        <div id = "feedback">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
