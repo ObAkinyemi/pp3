@@ -10,21 +10,22 @@ function enemyDmg () {
 }
 
 function attack () {
-    
+    let enemy_damage = enemyDmg();
+    let p_dmg = playerDmg();
     // console.log("damage: " + enemyDmg());
 
     // console.log("enemyHP:" + enemyHP);
-    if (enemyHP <= enemyDmg()) {
+    if (enemyHP <= enemy_damage) {
         enemyHP = 0;
         document.getElementById("feedback").innerText = "You won!";
     } else {
-        enemyHP -= enemyDmg();
+        enemyHP -= enemy_damage;
         document.getElementById("feedback").innerText = `You did a whopping ${enemyDmg()} damage!`;
-        if (playerHP <= playerDmg()){
+        if (playerHP <= p_dmg){
             playerHP = 0;
             document.getElementById("feedback").innerText = "Damn Nigga. You suck ass bruh!";
         } else {
-                playerHP -= playerDmg();
+                playerHP -= p_dmg;
                 
                 console.log(`Player hp: ${playerHP}`)
         }
@@ -32,7 +33,7 @@ function attack () {
     document.getElementById("enemy-hp").innerText = `HP: ${enemyHP}`;
     setTimeout(() => {
         document.getElementById("player-hp").innerText = `HP: ${playerHP}`;
-        document.getElementById("feedback").innerText = `The enemy did a whopping ${playerDmg()} damage!`;
+        document.getElementById("feedback").innerText = `The enemy did a whopping ${p_dmg} damage!`;
 
     }, 2500);
 
